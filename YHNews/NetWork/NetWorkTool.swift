@@ -33,10 +33,7 @@ extension NetworkToolProtocol {
                     print("解析失败:\(error)")
                 }
             }
-            DispatchQueue.main.async {
-                completionHandler(dataSource)
-            }
-            
+            completionHandler(dataSource) 
         }
     }
 }

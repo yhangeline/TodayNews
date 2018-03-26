@@ -17,7 +17,9 @@ class NetWorkManager: NSObject {
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) { (data, res, error) in
             let reponse = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
-            completed(reponse)
+            DispatchQueue.main.async {
+                completed(reponse)
+            }
         }
         task.resume()
     }
