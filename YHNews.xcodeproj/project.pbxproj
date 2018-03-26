@@ -8,20 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		F801E15C2064F28900770D46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F801E15B2064F28900770D46 /* AppDelegate.swift */; };
-		F801E15E2064F28900770D46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F801E15D2064F28900770D46 /* ViewController.swift */; };
-		F801E1612064F28900770D46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F801E15F2064F28900770D46 /* Main.storyboard */; };
 		F801E1632064F28900770D46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F801E1622064F28900770D46 /* Assets.xcassets */; };
 		F801E1662064F28900770D46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F801E1642064F28900770D46 /* LaunchScreen.storyboard */; };
+		F801E16F2064F35300770D46 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F801E16E2064F35300770D46 /* TabbarViewController.swift */; };
+		F801E1722064F3B300770D46 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F801E1712064F3B300770D46 /* HomeViewController.swift */; };
+		F801E1742064F56200770D46 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F801E1732064F56200770D46 /* NavigationViewController.swift */; };
+		F801E1782064F78600770D46 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F801E1772064F78600770D46 /* NetWorkManager.swift */; };
+		F801E17A2064FF3200770D46 /* NetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F801E1792064FF3200770D46 /* NetWorkTool.swift */; };
+		F801E17D2065033500770D46 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F801E17C2065033500770D46 /* Const.swift */; };
+		F801E1812065103900770D46 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F801E1802065103900770D46 /* Models.swift */; };
+		F801E1832068CAAE00770D46 /* HomeNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F801E1822068CAAE00770D46 /* HomeNaviView.swift */; };
+		F801E1852068CCBA00770D46 /* HomeNaviView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F801E1842068CCBA00770D46 /* HomeNaviView.xib */; };
+		F809DCAF2068D06900C8595E /* UIKit+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCAE2068D06900C8595E /* UIKit+Extention.swift */; };
+		F809DCB22068D42700C8595E /* YHPageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCB12068D42700C8595E /* YHPageTitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F801E1582064F28900770D46 /* YHNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YHNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F801E15B2064F28900770D46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F801E15D2064F28900770D46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F801E1602064F28900770D46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F801E1622064F28900770D46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F801E1652064F28900770D46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F801E1672064F28900770D46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F801E16E2064F35300770D46 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		F801E1712064F3B300770D46 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F801E1732064F56200770D46 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		F801E1772064F78600770D46 /* NetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
+		F801E1792064FF3200770D46 /* NetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkTool.swift; sourceTree = "<group>"; };
+		F801E17C2065033500770D46 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		F801E1802065103900770D46 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		F801E1822068CAAE00770D46 /* HomeNaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNaviView.swift; sourceTree = "<group>"; };
+		F801E1842068CCBA00770D46 /* HomeNaviView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNaviView.xib; sourceTree = "<group>"; };
+		F809DCAE2068D06900C8595E /* UIKit+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extention.swift"; sourceTree = "<group>"; };
+		F809DCB12068D42700C8595E /* YHPageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YHPageTitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +72,87 @@
 		F801E15A2064F28900770D46 /* YHNews */ = {
 			isa = PBXGroup;
 			children = (
+				F809DCB02068D3A500C8595E /* CustomControl */,
+				F809DCAD2068D05700C8595E /* extention */,
+				F801E17B2065032200770D46 /* const */,
+				F801E1762064F64400770D46 /* NetWork */,
+				F801E17E2065101300770D46 /* models */,
+				F801E1702064F39200770D46 /* Home */,
+				F801E16D2064F30000770D46 /* Tabar */,
 				F801E15B2064F28900770D46 /* AppDelegate.swift */,
-				F801E15D2064F28900770D46 /* ViewController.swift */,
-				F801E15F2064F28900770D46 /* Main.storyboard */,
 				F801E1622064F28900770D46 /* Assets.xcassets */,
 				F801E1642064F28900770D46 /* LaunchScreen.storyboard */,
 				F801E1672064F28900770D46 /* Info.plist */,
 			);
 			path = YHNews;
+			sourceTree = "<group>";
+		};
+		F801E16D2064F30000770D46 /* Tabar */ = {
+			isa = PBXGroup;
+			children = (
+				F801E16E2064F35300770D46 /* TabbarViewController.swift */,
+				F801E1732064F56200770D46 /* NavigationViewController.swift */,
+			);
+			path = Tabar;
+			sourceTree = "<group>";
+		};
+		F801E1702064F39200770D46 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F801E1752064F62E00770D46 /* view */,
+				F801E1712064F3B300770D46 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F801E1752064F62E00770D46 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F801E1822068CAAE00770D46 /* HomeNaviView.swift */,
+				F801E1842068CCBA00770D46 /* HomeNaviView.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		F801E1762064F64400770D46 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				F801E1772064F78600770D46 /* NetWorkManager.swift */,
+				F801E1792064FF3200770D46 /* NetWorkTool.swift */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		F801E17B2065032200770D46 /* const */ = {
+			isa = PBXGroup;
+			children = (
+				F801E17C2065033500770D46 /* Const.swift */,
+			);
+			path = const;
+			sourceTree = "<group>";
+		};
+		F801E17E2065101300770D46 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				F801E1802065103900770D46 /* Models.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		F809DCAD2068D05700C8595E /* extention */ = {
+			isa = PBXGroup;
+			children = (
+				F809DCAE2068D06900C8595E /* UIKit+Extention.swift */,
+			);
+			path = extention;
+			sourceTree = "<group>";
+		};
+		F809DCB02068D3A500C8595E /* CustomControl */ = {
+			isa = PBXGroup;
+			children = (
+				F809DCB12068D42700C8595E /* YHPageTitleView.swift */,
+			);
+			path = CustomControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +216,7 @@
 			files = (
 				F801E1662064F28900770D46 /* LaunchScreen.storyboard in Resources */,
 				F801E1632064F28900770D46 /* Assets.xcassets in Resources */,
-				F801E1612064F28900770D46 /* Main.storyboard in Resources */,
+				F801E1852068CCBA00770D46 /* HomeNaviView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,22 +227,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F801E15E2064F28900770D46 /* ViewController.swift in Sources */,
+				F801E1832068CAAE00770D46 /* HomeNaviView.swift in Sources */,
+				F801E17A2064FF3200770D46 /* NetWorkTool.swift in Sources */,
+				F801E1782064F78600770D46 /* NetWorkManager.swift in Sources */,
+				F801E1742064F56200770D46 /* NavigationViewController.swift in Sources */,
+				F809DCB22068D42700C8595E /* YHPageTitleView.swift in Sources */,
+				F801E1812065103900770D46 /* Models.swift in Sources */,
+				F801E16F2064F35300770D46 /* TabbarViewController.swift in Sources */,
 				F801E15C2064F28900770D46 /* AppDelegate.swift in Sources */,
+				F801E1722064F3B300770D46 /* HomeViewController.swift in Sources */,
+				F801E17D2065033500770D46 /* Const.swift in Sources */,
+				F809DCAF2068D06900C8595E /* UIKit+Extention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F801E15F2064F28900770D46 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F801E1602064F28900770D46 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F801E1642064F28900770D46 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
