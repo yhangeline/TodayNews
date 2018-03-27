@@ -34,7 +34,20 @@ class HomeViewController: UIViewController, YHPageTitleViewDelegate {
             self.view.addSubview(self.pageContentView!)
             
         }
+        
+        navigationBar.block = {
+            
+            let vc = UIViewController()
+            let ctr:CenterMenuController =
+                CenterMenuController.init(presentedViewController: self, presenting: self)
+            vc.transitioningDelegate = ctr
+            vc.modalPresentationStyle = .custom
+            vc.view.backgroundColor = UIColor.red
+            vc.view = CenterMenuView.init(frame: CGRect(x:0,y:0,width: screenWidth/3*2,height:screenHeight))
+            self.navigationController?.present(vc, animated: true, completion: nil)
+        }
     }
+
 }
 
 
