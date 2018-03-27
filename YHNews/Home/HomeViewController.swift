@@ -8,10 +8,11 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
+class HomeViewController: UIViewController, YHPageTitleViewDelegate {
+    
     let navigationBar = HomeNaviView.loadViewFromNib()
     var pageTitleView: YHPageTitleView?
+    var pageContentView: YHPageContentView?
     
     
     override func viewDidLoad() {
@@ -25,6 +26,13 @@ class HomeViewController: UIViewController {
             })
             self.pageTitleView = YHPageTitleView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 40), titleNames: titles)
             self.view.addSubview(self.pageTitleView!)
+            
+            for _ in arr {
+                self.addChildViewController(HotPageViewController())
+            }
+            self.pageContentView = YHPageContentView(frame: CGRect(x: 0, y: 40, width: screenWidth, height: screenHeight-40), childControllers: self.childViewControllers)
+            self.view.addSubview(self.pageContentView!)
+            
         }
         
         navigationBar.block = {
@@ -52,4 +60,9 @@ extension HomeViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navigation_background"), for: .default)
         
     }
+    
+    func pageTitleViewDidSeleced(atIndex index: Int) {
+        
+    }
 }
+

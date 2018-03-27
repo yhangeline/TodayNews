@@ -23,6 +23,10 @@
 		F801E1852068CCBA00770D46 /* HomeNaviView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F801E1842068CCBA00770D46 /* HomeNaviView.xib */; };
 		F809DCAF2068D06900C8595E /* UIKit+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCAE2068D06900C8595E /* UIKit+Extention.swift */; };
 		F809DCB22068D42700C8595E /* YHPageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCB12068D42700C8595E /* YHPageTitleView.swift */; };
+		F809DCB42068F64500C8595E /* YHPageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCB32068F64500C8595E /* YHPageContentView.swift */; };
+		F809DCB62068FB0000C8595E /* HotPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCB52068FB0000C8595E /* HotPageViewController.swift */; };
+		F809DCB92069F1C100C8595E /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCB72069F1C100C8595E /* NewsTableViewCell.swift */; };
+		F809DCBA2069F1C100C8595E /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F809DCB82069F1C100C8595E /* NewsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		F801E1842068CCBA00770D46 /* HomeNaviView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNaviView.xib; sourceTree = "<group>"; };
 		F809DCAE2068D06900C8595E /* UIKit+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extention.swift"; sourceTree = "<group>"; };
 		F809DCB12068D42700C8595E /* YHPageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YHPageTitleView.swift; sourceTree = "<group>"; };
+		F809DCB32068F64500C8595E /* YHPageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YHPageContentView.swift; sourceTree = "<group>"; };
+		F809DCB52068FB0000C8595E /* HotPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPageViewController.swift; sourceTree = "<group>"; };
+		F809DCB72069F1C100C8595E /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		F809DCB82069F1C100C8595E /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 			children = (
 				F801E1752064F62E00770D46 /* view */,
 				F801E1712064F3B300770D46 /* HomeViewController.swift */,
+				F809DCB52068FB0000C8595E /* HotPageViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -124,6 +133,8 @@
 			children = (
 				F801E1822068CAAE00770D46 /* HomeNaviView.swift */,
 				F801E1842068CCBA00770D46 /* HomeNaviView.xib */,
+				F809DCB72069F1C100C8595E /* NewsTableViewCell.swift */,
+				F809DCB82069F1C100C8595E /* NewsTableViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -165,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				F809DCB12068D42700C8595E /* YHPageTitleView.swift */,
+				F809DCB32068F64500C8595E /* YHPageContentView.swift */,
 			);
 			path = CustomControl;
 			sourceTree = "<group>";
@@ -230,6 +242,7 @@
 			files = (
 				F801E1662064F28900770D46 /* LaunchScreen.storyboard in Resources */,
 				F801E1632064F28900770D46 /* Assets.xcassets in Resources */,
+				F809DCBA2069F1C100C8595E /* NewsTableViewCell.xib in Resources */,
 				F801E1852068CCBA00770D46 /* HomeNaviView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,10 +258,13 @@
 				6B8FF04C2068ED5200BB9F01 /* CenterMenuView.swift in Sources */,
 				F801E1832068CAAE00770D46 /* HomeNaviView.swift in Sources */,
 				F801E17A2064FF3200770D46 /* NetWorkTool.swift in Sources */,
+				F809DCB42068F64500C8595E /* YHPageContentView.swift in Sources */,
+				F809DCB62068FB0000C8595E /* HotPageViewController.swift in Sources */,
 				F801E1782064F78600770D46 /* NetWorkManager.swift in Sources */,
 				F801E1742064F56200770D46 /* NavigationViewController.swift in Sources */,
 				F809DCB22068D42700C8595E /* YHPageTitleView.swift in Sources */,
 				F801E1812065103900770D46 /* Models.swift in Sources */,
+				F809DCB92069F1C100C8595E /* NewsTableViewCell.swift in Sources */,
 				F801E16F2064F35300770D46 /* TabbarViewController.swift in Sources */,
 				F801E15C2064F28900770D46 /* AppDelegate.swift in Sources */,
 				F801E1722064F3B300770D46 /* HomeViewController.swift in Sources */,
