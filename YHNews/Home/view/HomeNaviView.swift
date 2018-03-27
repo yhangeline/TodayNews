@@ -9,12 +9,19 @@
 import UIKit
 
 class HomeNaviView: UIView, NibLoadable {
+    public var block:()->Void = {
+        
+    }
     
     /// 固有的大小
     override var intrinsicContentSize: CGSize {
         return UILayoutFittingExpandedSize
     }
     
+    
+    @IBAction func openCenterMenu(_ sender: Any) {
+        block()
+    }
     
     /// 重写 frame
     override var frame: CGRect {
