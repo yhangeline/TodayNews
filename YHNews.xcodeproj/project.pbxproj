@@ -27,6 +27,10 @@
 		F809DCB62068FB0000C8595E /* HotPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCB52068FB0000C8595E /* HotPageViewController.swift */; };
 		F809DCB92069F1C100C8595E /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCB72069F1C100C8595E /* NewsTableViewCell.swift */; };
 		F809DCBA2069F1C100C8595E /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F809DCB82069F1C100C8595E /* NewsTableViewCell.xib */; };
+		F809DCBC206A140000C8595E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCBB206A140000C8595E /* DetailViewController.swift */; };
+		F809DCBF206A180000C8595E /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCBE206A180000C8595E /* VideoViewController.swift */; };
+		F809DCC3206A362B00C8595E /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCC1206A362B00C8595E /* VideoTableViewCell.swift */; };
+		F809DCC4206A362B00C8595E /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F809DCC2206A362B00C8595E /* VideoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,10 @@
 		F809DCB52068FB0000C8595E /* HotPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPageViewController.swift; sourceTree = "<group>"; };
 		F809DCB72069F1C100C8595E /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		F809DCB82069F1C100C8595E /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		F809DCBB206A140000C8595E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F809DCBE206A180000C8595E /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		F809DCC1206A362B00C8595E /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		F809DCC2206A362B00C8595E /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,7 @@
 				F801E1762064F64400770D46 /* NetWork */,
 				F801E17E2065101300770D46 /* models */,
 				F801E1702064F39200770D46 /* Home */,
+				F809DCBD206A17CE00C8595E /* video */,
 				F801E16D2064F30000770D46 /* Tabar */,
 				F801E15B2064F28900770D46 /* AppDelegate.swift */,
 				F801E1622064F28900770D46 /* Assets.xcassets */,
@@ -124,6 +133,7 @@
 				F801E1752064F62E00770D46 /* view */,
 				F801E1712064F3B300770D46 /* HomeViewController.swift */,
 				F809DCB52068FB0000C8595E /* HotPageViewController.swift */,
+				F809DCBB206A140000C8595E /* DetailViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -179,6 +189,24 @@
 				F809DCB32068F64500C8595E /* YHPageContentView.swift */,
 			);
 			path = CustomControl;
+			sourceTree = "<group>";
+		};
+		F809DCBD206A17CE00C8595E /* video */ = {
+			isa = PBXGroup;
+			children = (
+				F809DCC0206A361B00C8595E /* view */,
+				F809DCBE206A180000C8595E /* VideoViewController.swift */,
+			);
+			path = video;
+			sourceTree = "<group>";
+		};
+		F809DCC0206A361B00C8595E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F809DCC1206A362B00C8595E /* VideoTableViewCell.swift */,
+				F809DCC2206A362B00C8595E /* VideoTableViewCell.xib */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +271,7 @@
 				F801E1662064F28900770D46 /* LaunchScreen.storyboard in Resources */,
 				F801E1632064F28900770D46 /* Assets.xcassets in Resources */,
 				F809DCBA2069F1C100C8595E /* NewsTableViewCell.xib in Resources */,
+				F809DCC4206A362B00C8595E /* VideoTableViewCell.xib in Resources */,
 				F801E1852068CCBA00770D46 /* HomeNaviView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,11 +284,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B8FF04E2068F18000BB9F01 /* CenterMenuController.swift in Sources */,
+				F809DCBC206A140000C8595E /* DetailViewController.swift in Sources */,
+				F809DCBF206A180000C8595E /* VideoViewController.swift in Sources */,
 				6B8FF04C2068ED5200BB9F01 /* CenterMenuView.swift in Sources */,
 				F801E1832068CAAE00770D46 /* HomeNaviView.swift in Sources */,
 				F801E17A2064FF3200770D46 /* NetWorkTool.swift in Sources */,
 				F809DCB42068F64500C8595E /* YHPageContentView.swift in Sources */,
 				F809DCB62068FB0000C8595E /* HotPageViewController.swift in Sources */,
+				F809DCC3206A362B00C8595E /* VideoTableViewCell.swift in Sources */,
 				F801E1782064F78600770D46 /* NetWorkManager.swift in Sources */,
 				F801E1742064F56200770D46 /* NavigationViewController.swift in Sources */,
 				F809DCB22068D42700C8595E /* YHPageTitleView.swift in Sources */,

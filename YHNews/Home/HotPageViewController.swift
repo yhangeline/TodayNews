@@ -48,4 +48,10 @@ extension HotPageViewController {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let url = dataSource[indexPath.row].article_url ?? "https://www.baidu.com"
+        navigationController?.pushViewController(DetailViewController(h5Url: url), animated: true)
+        
+    }
 }

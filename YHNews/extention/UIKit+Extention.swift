@@ -18,9 +18,53 @@ extension NibLoadable {
 }
 
 extension UIView {
+    
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return 0.0
+        }
+        set(newValue) {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = true
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor {
+        get {
+            return UIColor()
+        }
+        set(newValue) {
+            layer.borderColor = newValue.cgColor
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return 0.0
+        }
+        set(newValue) {
+            layer.borderWidth = newValue
+            
+        }
+    }
+    
     func removeAllSubviews() {
+
         for view in self.subviews {
             view.removeFromSuperview()
+        }
+    }
+}
+
+extension UIImageView {
+    func setImage(url: String, placeHolderImage: UIImage) {
+        self.image = placeHolderImage
+        DispatchQueue.global().async {
+            let data = try! Data(contentsOf: URL(string: url)!)
+            let img = UIImage(data: data)
+            DispatchQueue.main.async {
+                self.image = img
+            }
         }
     }
 }
