@@ -20,4 +20,10 @@ struct HomeTitleModel:Codable {
     var web_url:String?
 }
 
+struct NewsModel: Decodable {
+    var abstract: String?
+    var article_url: String?
+    var display_url: String?
+}
+
 

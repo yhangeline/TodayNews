@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol YHPageTitleViewDelegate {
+    func pageTitleViewDidSeleced(atIndex index: Int)
+}
+
 private class PageTitleCell: UICollectionViewCell {
     
     var title: UILabel!
@@ -43,6 +47,10 @@ class YHPageTitleView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
     
     private var collectionView: UICollectionView!
     private let dataSource: [String]
+    var delegate: YHPageTitleViewDelegate?
+    
+    var firstLoadCell = true
+    
     
     init(frame: CGRect, titleNames: [String]) {
         dataSource = titleNames
@@ -61,7 +69,7 @@ class YHPageTitleView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
         layout.minimumInteritemSpacing = 5
         layout.minimumLineSpacing = 0
         layout.scrollDirection = UICollectionViewScrollDirection.horizontal
-        collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -83,14 +91,16 @@ extension YHPageTitleView {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: PageTitleCell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ide", for: indexPath) as! PageTitleCell
         cell.title.text = dataSource[indexPath.row]
-        if indexPath.row == 0 {
+        if indexPath.row == 0 && firstLoadCell {
             collectionView.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition.left)
             cell.isSelected = true
+            firstLoadCell = false
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView .scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+        collectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+        self.delegate?.pageTitleViewDidSeleced(atIndex: indexPath.row)
     }
 }

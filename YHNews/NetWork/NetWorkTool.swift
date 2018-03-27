@@ -10,6 +10,7 @@ import Foundation
 
 protocol NetworkToolProtocol {
     static func loadHomeNewTitleData(completionHandler: @escaping (_ newsTitles: [HomeTitleModel]) -> ())
+    static func loadApiNewsFeeds(completionHandler: @escaping (_ newsArray: [NewsModel]) -> ())
 }
 
 extension NetworkToolProtocol {
@@ -28,12 +29,43 @@ extension NetworkToolProtocol {
                 do {
                     let model = try decoder.decode(HomeTitleModel.self, from: data)
                     dataSource.append(model)
-//                    print("解析成功:\(model)")
                 } catch  {
                     print("解析失败:\(error)")
                 }
             }
             completionHandler(dataSource) 
+        }
+    }
+    
+    static func loadApiNewsFeeds(completionHandler: @escaping (_ newsArray: [NewsModel]) -> ()) {
+        let pullTime = Date().timeIntervalSince1970
+        let url = BASE_URL + "/api/news/feed/v75/"
+        let params = ["device_id": device_id,
+                      "count": "20",
+                      "list_count": "1",
+                      "category": "",
+                      "min_behot_time": String(pullTime),
+                      "strict": "0",
+                      "detail": "1",
+                      "refresh_reason": "1",
+                      "tt_from": "auto",
+                      "iid": iid]
+        NetWorkManager.request(url: url, parameters: params) { (response) in
+            let dic = response as! Dictionary<String,Any>
+            let datas = dic["data"] as! Array<Any>
+            var dataArray = [NewsModel]()
+            for item in datas {
+                let jsonString = (item as! Dictionary<String,Any>)["content"] as! String
+                
+                let decoder = JSONDecoder()
+                do {
+                    let model = try decoder.decode(NewsModel.self, from: jsonString.data(using: String.Encoding.utf8)!)
+                    dataArray.append(model)
+                } catch  {
+                    print("解析失败:\(error)")
+                }
+            }
+            completionHandler(dataArray)
         }
     }
 }
