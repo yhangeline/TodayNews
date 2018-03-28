@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "详情"
         webView = UIWebView(frame: self.view.bounds)
         webView?.loadRequest(URLRequest(url: URL(string: h5Url)!))

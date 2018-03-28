@@ -18,8 +18,8 @@ let emojiItemWidth = screenWidth / 7
 let IS_iPhoneX = (UIScreen.main.bounds.size.width == 375 && UIScreen.main.bounds.size.height == 812)
 
 let STATUS_BAR_HEIGHT = UIApplication.shared.statusBarFrame.size.height
-let NAVIGATION_BAR_HEIGHT = 44
-let TAB_BAR_HEIGHT = UIScreen.main.bounds.size.height == 812 ? 83.0 : 49.0
+let NAVIGATION_BAR_HEIGHT = CGFloat(44)
+let TAB_BAR_HEIGHT = UIScreen.main.bounds.size.height == 812 ? CGFloat(83.0) : CGFloat(49.0)
 let HOME_INDICATOR_HEIGHT = (IS_iPhoneX ? 34.0:0.0)
 
 /// 服务器地址

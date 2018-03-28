@@ -45,7 +45,7 @@
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5tZ-Cy-nE8">
-                        <rect key="frame" x="20" y="158" width="50" height="50"/>
+                        <rect key="frame" x="20" y="150" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="YwZ-AD-b4G"/>
                             <constraint firstAttribute="height" constant="50" id="oO3-2p-yNH"/>
@@ -74,7 +74,7 @@
                     <constraint firstAttribute="trailing" secondItem="a3X-bo-QD7" secondAttribute="trailing" id="WP9-Th-vMU"/>
                     <constraint firstItem="Die-tG-zKs" firstAttribute="top" secondItem="a8x-AS-Znh" secondAttribute="bottom" constant="7.5" id="d2K-qi-HOI"/>
                     <constraint firstAttribute="bottom" secondItem="eKf-jg-Dhg" secondAttribute="bottom" constant="12.5" id="eDO-Wk-H3Q"/>
-                    <constraint firstItem="5tZ-Cy-nE8" firstAttribute="bottom" secondItem="a3X-bo-QD7" secondAttribute="bottom" constant="8" id="g9o-bx-OMB"/>
+                    <constraint firstItem="5tZ-Cy-nE8" firstAttribute="bottom" secondItem="a3X-bo-QD7" secondAttribute="bottom" id="g9o-bx-OMB"/>
                     <constraint firstItem="a3X-bo-QD7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pHw-ku-0MI"/>
                     <constraint firstItem="iT2-7Y-efw" firstAttribute="centerX" secondItem="a3X-bo-QD7" secondAttribute="centerX" id="xAt-wM-VlC"/>
                     <constraint firstItem="Die-tG-zKs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="yH8-XM-pyq"/>

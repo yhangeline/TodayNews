@@ -31,6 +31,8 @@
 		F809DCBF206A180000C8595E /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCBE206A180000C8595E /* VideoViewController.swift */; };
 		F809DCC3206A362B00C8595E /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCC1206A362B00C8595E /* VideoTableViewCell.swift */; };
 		F809DCC4206A362B00C8595E /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F809DCC2206A362B00C8595E /* VideoTableViewCell.xib */; };
+		F809DCC6206A468500C8595E /* YHVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCC5206A468500C8595E /* YHVideoPlayer.swift */; };
+		F809DCC8206A469700C8595E /* YHVideoPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = F809DCC7206A469700C8595E /* YHVideoPlayer.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		F809DCBE206A180000C8595E /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		F809DCC1206A362B00C8595E /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		F809DCC2206A362B00C8595E /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
+		F809DCC5206A468500C8595E /* YHVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YHVideoPlayer.swift; sourceTree = "<group>"; };
+		F809DCC7206A469700C8595E /* YHVideoPlayer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YHVideoPlayer.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,8 @@
 			children = (
 				F809DCB12068D42700C8595E /* YHPageTitleView.swift */,
 				F809DCB32068F64500C8595E /* YHPageContentView.swift */,
+				F809DCC5206A468500C8595E /* YHVideoPlayer.swift */,
+				F809DCC7206A469700C8595E /* YHVideoPlayer.xib */,
 			);
 			path = CustomControl;
 			sourceTree = "<group>";
@@ -271,6 +277,7 @@
 				F801E1662064F28900770D46 /* LaunchScreen.storyboard in Resources */,
 				F801E1632064F28900770D46 /* Assets.xcassets in Resources */,
 				F809DCBA2069F1C100C8595E /* NewsTableViewCell.xib in Resources */,
+				F809DCC8206A469700C8595E /* YHVideoPlayer.xib in Resources */,
 				F809DCC4206A362B00C8595E /* VideoTableViewCell.xib in Resources */,
 				F801E1852068CCBA00770D46 /* HomeNaviView.xib in Resources */,
 			);
@@ -298,6 +305,7 @@
 				F801E1812065103900770D46 /* Models.swift in Sources */,
 				F809DCB92069F1C100C8595E /* NewsTableViewCell.swift in Sources */,
 				F801E16F2064F35300770D46 /* TabbarViewController.swift in Sources */,
+				F809DCC6206A468500C8595E /* YHVideoPlayer.swift in Sources */,
 				F801E15C2064F28900770D46 /* AppDelegate.swift in Sources */,
 				F801E1722064F3B300770D46 /* HomeViewController.swift in Sources */,
 				F801E17D2065033500770D46 /* Const.swift in Sources */,

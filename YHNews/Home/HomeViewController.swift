@@ -57,10 +57,6 @@ extension HomeViewController {
     private func layoutNavigationBar(){
         view.backgroundColor = UIColor.white
         navigationItem.titleView = navigationBar
-        // 设置状态栏属性
-        navigationController?.navigationBar.barStyle = .black
-        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navigation_background"), for: .default)
-        
     }
     
     func pageTitleViewDidSeleced(atIndex index: Int) {
