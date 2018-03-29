@@ -11,6 +11,7 @@ import Foundation
 protocol NetworkToolProtocol {
     static func loadHomeNewTitleData(completionHandler: @escaping (_ newsTitles: [HomeTitleModel]) -> ())
     static func loadApiNewsFeeds(completionHandler: @escaping (_ newsArray: [NewsModel]) -> ())
+    static func loadVideoNewsFeeds(completionHandler: @escaping (_ newsArray: [VideoModel]) -> ())
 }
 
 extension NetworkToolProtocol {
@@ -65,6 +66,40 @@ extension NetworkToolProtocol {
                     print("解析失败:\(error)")
                 }
             }
+            completionHandler(dataArray)
+        }
+    }
+    
+    static func loadVideoNewsFeeds(completionHandler: @escaping (_ newsArray: [VideoModel]) -> ()) {
+        let pullTime = Date().timeIntervalSince1970
+        let url = BASE_URL + "/api/news/feed/v75/"
+        let params = ["device_id": device_id,
+                      "count": "20",
+                      "list_count": "1",
+                      "category": "video",
+                      "min_behot_time": String(pullTime),
+                      "strict": "0",
+                      "detail": "1",
+                      "refresh_reason": "1",
+                      "tt_from": "auto",
+                      "iid": iid]
+        NetWorkManager.request(url: url, parameters: params) { (response) in
+            let dic = response as! Dictionary<String,Any>
+            let datas = dic["data"] as! Array<Any>
+            var dataArray = [VideoModel]()
+            for item in datas {
+                let jsonString = (item as! Dictionary<String,Any>)["content"] as! String
+                
+                let decoder = JSONDecoder()
+                do {
+                    let model = try decoder.decode(VideoModel.self, from: jsonString.data(using: String.Encoding.utf8)!)
+                    dataArray.append(model)
+                } catch  {
+                    print("解析失败:\(error)")
+                }
+                print(try! JSONSerialization.jsonObject(with: jsonString.data(using: String.Encoding.utf8)!, options: JSONSerialization.ReadingOptions.mutableContainers))
+            }
+
             completionHandler(dataArray)
         }
     }

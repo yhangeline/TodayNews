@@ -8,15 +8,29 @@
 
 import UIKit
 
+protocol PageContentViewDelegate {
+    func pageContentViewDidEndScroll(index: Int)
+}
+
+
 class YHPageContentView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    
     let controllers: [UIViewController]
-     private var collectionView: UICollectionView!
+    
+    private var collectionView: UICollectionView!
+    
+    var delegate: PageContentViewDelegate?
+    
     
     init(frame: CGRect, childControllers: [UIViewController]) {
         controllers = childControllers
         super.init(frame: frame)
         layoutUI()
+    }
+    
+    public func setIndex(index: Int) {
+        collectionView.scrollToItem(at: IndexPath.init(item: index, section: 0), at: UICollectionViewScrollPosition.left, animated: true)
     }
     
     private func layoutUI() {
@@ -56,6 +70,6 @@ extension YHPageContentView {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
+        delegate?.pageContentViewDidEndScroll(index: Int(scrollView.contentOffset.x/scrollView.frame.size.width))
     }
 }

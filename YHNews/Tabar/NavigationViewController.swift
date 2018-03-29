@@ -12,7 +12,10 @@ class NavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // 设置状态栏属性
+        navigationBar.barStyle = .black
+        navigationBar.setBackgroundImage(UIImage(named: "navigation_background"), for: .default)
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +24,19 @@ class NavigationViewController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        if self.childViewControllers.count > 0 {
+            viewController.hidesBottomBarWhenPushed = true
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "lefterbackicon_titlebar_24x24_"), style: .plain, target: self, action: #selector(navigationBack))
+            interactivePopGestureRecognizer?.delegate = viewController as? UIGestureRecognizerDelegate
+        }
+        super.pushViewController(viewController, animated: animated)
+    }
+    
+    @objc private func navigationBack() {
+        popViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

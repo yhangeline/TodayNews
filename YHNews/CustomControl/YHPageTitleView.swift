@@ -58,6 +58,13 @@ class YHPageTitleView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
         layoutUI()
     }
     
+    public func setIndex(index: Int) {
+        let indexPath = IndexPath(row: index, section: 0)
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.isSelected = true
+        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionViewScrollPosition.centeredHorizontally)
+    }
+    
     func layoutUI() {
         
         self.layer.masksToBounds = true
