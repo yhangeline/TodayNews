@@ -13,12 +13,14 @@ class TabbarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.tintColor = UIColor(displayP3Red: 177/255.0, green: 79/255.0, blue: 71/255.0, alpha: 1)
+        tabBar.barTintColor = .white
         addchildViewControllers()
     }
 
     private func addchildViewControllers()
     {
         addChildViewController(HomeViewController(), title: "首页", imageName: "home")
+        addChildViewController(RedpackageViewController(), title: "", imageName: "redpackage")
         addChildViewController(VideoViewController(), title: "视频", imageName: "video")
     }
     
