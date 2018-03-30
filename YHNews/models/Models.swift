@@ -28,6 +28,7 @@ struct NewsModel: Decodable {
 }
 
 struct VideoModel: Decodable {
+    
     var read_count: Int?
     var title: String?
     var video_duration: Int?

@@ -33,6 +33,7 @@
 		F809DCC4206A362B00C8595E /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F809DCC2206A362B00C8595E /* VideoTableViewCell.xib */; };
 		F809DCC6206A468500C8595E /* YHVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCC5206A468500C8595E /* YHVideoPlayer.swift */; };
 		F809DCC8206A469700C8595E /* YHVideoPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = F809DCC7206A469700C8595E /* YHVideoPlayer.xib */; };
+		F809DCCB206C917100C8595E /* RedpackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCCA206C917100C8595E /* RedpackageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		F809DCC2206A362B00C8595E /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		F809DCC5206A468500C8595E /* YHVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YHVideoPlayer.swift; sourceTree = "<group>"; };
 		F809DCC7206A469700C8595E /* YHVideoPlayer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YHVideoPlayer.xib; sourceTree = "<group>"; };
+		F809DCCA206C917100C8595E /* RedpackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedpackageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				F801E17E2065101300770D46 /* models */,
 				F801E1702064F39200770D46 /* Home */,
 				F809DCBD206A17CE00C8595E /* video */,
+				F809DCC9206C906700C8595E /* redpackage */,
 				F801E16D2064F30000770D46 /* Tabar */,
 				F801E15B2064F28900770D46 /* AppDelegate.swift */,
 				F801E1622064F28900770D46 /* Assets.xcassets */,
@@ -215,6 +218,14 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		F809DCC9206C906700C8595E /* redpackage */ = {
+			isa = PBXGroup;
+			children = (
+				F809DCCA206C917100C8595E /* RedpackageViewController.swift */,
+			);
+			path = redpackage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,6 +305,7 @@
 				F809DCBC206A140000C8595E /* DetailViewController.swift in Sources */,
 				F809DCBF206A180000C8595E /* VideoViewController.swift in Sources */,
 				6B8FF04C2068ED5200BB9F01 /* CenterMenuView.swift in Sources */,
+				F809DCCB206C917100C8595E /* RedpackageViewController.swift in Sources */,
 				F801E1832068CAAE00770D46 /* HomeNaviView.swift in Sources */,
 				F801E17A2064FF3200770D46 /* NetWorkTool.swift in Sources */,
 				F809DCB42068F64500C8595E /* YHPageContentView.swift in Sources */,

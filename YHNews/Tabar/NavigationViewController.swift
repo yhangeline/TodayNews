@@ -27,7 +27,8 @@ class NavigationViewController: UINavigationController {
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if self.childViewControllers.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
-            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "lefterbackicon_titlebar_24x24_"), style: .plain, target: self, action: #selector(navigationBack))
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "lefterbackicon_titlebar_24x24_")?.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(navigationBack))
+            viewController.navigationItem.leftBarButtonItem?.tintColor = .white
             interactivePopGestureRecognizer?.delegate = viewController as? UIGestureRecognizerDelegate
         }
         super.pushViewController(viewController, animated: animated)
