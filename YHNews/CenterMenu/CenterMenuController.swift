@@ -9,7 +9,9 @@
 import UIKit
 
 class CenterMenuController: UIPresentationController {
+    
     fileprivate var maskView: UIView!
+    var InteractionControllerKey: UIPercentDrivenInteractiveTransition? = nil
     
     public override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
@@ -17,12 +19,48 @@ class CenterMenuController: UIPresentationController {
         self.setupMaskView()
     }
     
-    @objc dynamic func dismiss(tap:UITapGestureRecognizer) {
+    @objc func dismissByTap(tap:UITapGestureRecognizer) {
         presentedViewController.dismiss(animated: true) {
-            
+//            [weak self] in
+//            self?.animateTransition(using: self?.animationController(forDismissed: (self?.presentedViewController)!) as! UIViewControllerContextTransitioning)
         }
         
     }
+    
+    @objc func dismissByPan(pan:UIPanGestureRecognizer){
+        switch pan.state {
+            
+        case .began:
+            self.interactionController = UIPercentDrivenInteractiveTransition()
+            
+            presentedViewController.navigationController?.popViewController(animated: true)
+            
+        case .changed:
+            let width:CGFloat = (self.containerView?.bounds.size.width)!*(2.0/3.0)
+            let translation = pan.translation(in: self.containerView)
+            
+            let completionProgress = translation.x/(-width)
+            self.interactionController.update(completionProgress)
+            print(translation,completionProgress)
+            
+        case .ended:
+            let width:CGFloat = (self.containerView?.bounds.size.width)!*(2.0/3.0)/2
+            let completionProgress = pan.velocity(in: self.containerView).x+width
+            if (completionProgress > 0) {
+                self.interactionController.finish()
+            } else {
+                self.interactionController.cancel()
+            }
+//            self.interactionController = nil
+            
+        default:
+            
+            self.interactionController.cancel()
+//            self.interactionController = nil
+            
+        }
+    }
+    
     
     override func presentationTransitionWillBegin() {
         containerView?.insertSubview(maskView, at: 0)
@@ -38,7 +76,8 @@ class CenterMenuController: UIPresentationController {
         }
         
         coordinator.animate(alongsideTransition: { _ in
-            self.presentingViewController.view?.transform = CGAffineTransform(translationX: (self.containerView?.bounds.size.width)!*(2.0/3.0)-1, y: 0)
+            let width:CGFloat = (self.containerView?.bounds.size.width)!*(2.0/3.0)
+            self.presentingViewController.view?.transform = CGAffineTransform(translationX: width-1, y: 0)
             self.maskView.alpha = 1.0
         })
     }
@@ -64,12 +103,8 @@ class CenterMenuController: UIPresentationController {
     }
     override var frameOfPresentedViewInContainerView: CGRect {
         
-        //1
         var frame: CGRect = .zero
-        frame.size = size(forChildContentContainer: presentedViewController,
-                          withParentContainerSize: containerView!.bounds.size)
-        
-        //2
+        frame.size = size(forChildContentContainer: presentedViewController, withParentContainerSize: containerView!.bounds.size)
         frame.origin = .zero
         return frame
     }
@@ -83,79 +118,59 @@ private extension CenterMenuController {
         maskView.isUserInteractionEnabled = true
         maskView.translatesAutoresizingMaskIntoConstraints = false
         
-        let dismissTap = UITapGestureRecognizer(target: self, action: #selector(dismiss))
+        let dismissTap = UITapGestureRecognizer(target: self, action: #selector(dismissByTap))
         maskView.addGestureRecognizer(dismissTap)
+        
+        let dismissPan = UIPanGestureRecognizer(target: self, action: #selector(dismissByPan))
+        maskView.addGestureRecognizer(dismissPan)
     }
 
 }
-extension CenterMenuController : UIViewControllerTransitioningDelegate{
+
+class CenterMenuDelegate: NSObject{
+    
+
+    
+}
+extension CenterMenuDelegate : UIViewControllerTransitioningDelegate{
     
     public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        let presentationController = CenterMenuController(presentedViewController: presented, presenting: presenting)
+        let presentationController =
+            CenterMenuController.init(presentedViewController: presented, presenting: presenting)
         return presentationController
     }
+    
     func animationController(forPresented presented: UIViewController,
                              presenting: UIViewController,
                              source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return SlideInPresentationAnimator( isPresentation: true)
+
+        return TransitonAnimate(isPresentation:true)
     }
     
     func animationController(forDismissed dismissed: UIViewController)
         -> UIViewControllerAnimatedTransitioning? {
-            return SlideInPresentationAnimator( isPresentation: false)
+            return TransitonAnimate(isPresentation:false)
     }
-
 
 }
-
-final class SlideInPresentationAnimator: NSObject {
-  
-    let isPresentation: Bool
-    
-    init(isPresentation: Bool) {
-        self.isPresentation = isPresentation
-        super.init()
-    }
-}
-
-extension SlideInPresentationAnimator: UIViewControllerAnimatedTransitioning {
-    func transitionDuration(
-        using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.3
-    }
-    
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        // 1
-        let key = isPresentation ? UITransitionContextViewControllerKey.to
-            : UITransitionContextViewControllerKey.from
-        
-        let controller = transitionContext.viewController(forKey: key)!
-        
-        // 2
-        if isPresentation {
-            transitionContext.containerView.addSubview(controller.view)
-        }else{
+extension CenterMenuController: UINavigationControllerDelegate {
+    var interactionController:UIPercentDrivenInteractiveTransition{
+        get {
+            return InteractionControllerKey!
+        }
+        set(newValue) {
+            InteractionControllerKey = newValue
             
         }
-        
-        // 3
-        let presentedFrame = transitionContext.finalFrame(for: controller)
-        var dismissedFrame = presentedFrame
-        dismissedFrame.origin.x = -presentedFrame.width
+    }
+    func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return self.interactionController
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 
+        return TransitonAnimate(isPresentation:false)
         
-        // 4
-        let initialFrame = isPresentation ? dismissedFrame : presentedFrame
-        let finalFrame = isPresentation ? presentedFrame : dismissedFrame
-        
-        // 5
-        let animationDuration = transitionDuration(using: transitionContext)
-        controller.view.frame = initialFrame
-        UIView.animate(withDuration: animationDuration, animations: {
-            controller.view.frame = finalFrame
-        }) { finished in
-            transitionContext.completeTransition(finished)
-        }
     }
     
 }

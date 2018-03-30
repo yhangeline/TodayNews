@@ -10,59 +10,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YHNews/CenterMenu/CenterMenuController.swift"
-            timestampString = "543822121.283026"
+            timestampString = "544074602.78066"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "animateTransition(using:)"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "navigationController(navigationController:interactionControllerForAnimationController:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YHNews/CenterMenu/CenterMenuController.swift"
-            timestampString = "543822121.2835799"
+            timestampString = "544074602.78073"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "dismiss(tap:)"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "navigationController(_:animationControllerFor:from:to:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YHNews/CenterMenu/CenterMenuController.swift"
+            timestampString = "544074602.7807831"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "dismissByPan(pan:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YHNews/CenterMenu/CenterMenuController.swift"
+            timestampString = "544074602.780835"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "dismissByPan(pan:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "YHNews.CenterMenuController.dismiss(tap: __ObjC.UITapGestureRecognizer) -&gt; ()"
+                  symbolName = "YHNews.CenterMenuController.dismissByPan(pan: __ObjC.UIPanGestureRecognizer) -&gt; ()"
                   moduleName = "YHNews"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jiuqi5/Desktop/JQ_Lay/TodayNews/YHNews/CenterMenu/CenterMenuController.swift"
-                  timestampString = "543761998.637717"
+                  timestampString = "544074377.176174"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "18">
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "900">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in YHNews.CenterMenuController.dismiss(tap: __ObjC.UITapGestureRecognizer) -&gt; ()"
+                  symbolName = "YHNews.CenterMenuController.dismissByPan(pan: __ObjC.UIPanGestureRecognizer) -&gt; ()"
                   moduleName = "YHNews"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jiuqi5/Desktop/JQ_Lay/TodayNews/YHNews/CenterMenu/CenterMenuController.swift"
-                  timestampString = "543761998.640352"
+                  timestampString = "544074377.177375"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "4">
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "1116">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -73,13 +105,76 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YHNews/CenterMenu/CenterMenuController.swift"
-            timestampString = "543822121.2838041"
+            filePath = "YHNews/CenterMenu/TransitonAnimate.swift"
+            timestampString = "544074602.780888"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "presentationTransitionWillBegin()"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YHNews.TransitonAnimate.__deallocating_deinit"
+                  moduleName = "YHNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiuqi5/Desktop/JQ_Lay/TodayNews/YHNews/CenterMenu/TransitonAnimate.swift"
+                  timestampString = "544074377.180542"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YHNews.TransitonAnimate.__allocating_init() -&gt; YHNews.TransitonAnimate"
+                  moduleName = "YHNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiuqi5/Desktop/JQ_Lay/TodayNews/YHNews/CenterMenu/TransitonAnimate.swift"
+                  timestampString = "544074377.1820101"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YHNews.TransitonAnimate.init() -&gt; YHNews.TransitonAnimate"
+                  moduleName = "YHNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiuqi5/Desktop/JQ_Lay/TodayNews/YHNews/CenterMenu/TransitonAnimate.swift"
+                  timestampString = "544074377.183529"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "8">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YHNews/Home/HomeViewController.swift"
+            timestampString = "544074602.78118"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,28 +185,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YHNews/CenterMenu/CenterMenuController.swift"
-            timestampString = "543822121.284011"
+            timestampString = "544074602.7812279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "animationController(forDismissed:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YHNews/CenterMenu/CenterMenuView.swift"
-            timestampString = "543815764.938549"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "configView(temperature:location:)"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "presentationController(forPresented:presenting:source:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
