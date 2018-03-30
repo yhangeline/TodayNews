@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6B8FF04C2068ED5200BB9F01 /* CenterMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8FF04B2068ED5200BB9F01 /* CenterMenuView.swift */; };
 		6B8FF04E2068F18000BB9F01 /* CenterMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8FF04D2068F18000BB9F01 /* CenterMenuController.swift */; };
+		6BDC26DF206DDCFE0039A8DD /* TransitonAnimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC26DE206DDCFD0039A8DD /* TransitonAnimate.swift */; };
 		F801E15C2064F28900770D46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F801E15B2064F28900770D46 /* AppDelegate.swift */; };
 		F801E1632064F28900770D46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F801E1622064F28900770D46 /* Assets.xcassets */; };
 		F801E1662064F28900770D46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F801E1642064F28900770D46 /* LaunchScreen.storyboard */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		6B8FF04B2068ED5200BB9F01 /* CenterMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterMenuView.swift; sourceTree = "<group>"; };
 		6B8FF04D2068F18000BB9F01 /* CenterMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterMenuController.swift; sourceTree = "<group>"; };
+		6BDC26DE206DDCFD0039A8DD /* TransitonAnimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitonAnimate.swift; sourceTree = "<group>"; };
 		F801E1582064F28900770D46 /* YHNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YHNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F801E15B2064F28900770D46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F801E1622064F28900770D46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			children = (
 				6B8FF04B2068ED5200BB9F01 /* CenterMenuView.swift */,
 				6B8FF04D2068F18000BB9F01 /* CenterMenuController.swift */,
+				6BDC26DE206DDCFD0039A8DD /* TransitonAnimate.swift */,
 			);
 			path = CenterMenu;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				F801E1742064F56200770D46 /* NavigationViewController.swift in Sources */,
 				F809DCB22068D42700C8595E /* YHPageTitleView.swift in Sources */,
 				F801E1812065103900770D46 /* Models.swift in Sources */,
+				6BDC26DF206DDCFE0039A8DD /* TransitonAnimate.swift in Sources */,
 				F809DCB92069F1C100C8595E /* NewsTableViewCell.swift in Sources */,
 				F801E16F2064F35300770D46 /* TabbarViewController.swift in Sources */,
 				F809DCC6206A468500C8595E /* YHVideoPlayer.swift in Sources */,

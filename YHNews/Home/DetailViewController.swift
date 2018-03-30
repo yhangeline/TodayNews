@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
         webView = UIWebView(frame: self.view.bounds)
         webView?.loadRequest(URLRequest(url: URL(string: h5Url)!))
         view.addSubview(webView!)
+
     }
     
     init(h5Url: String) {
@@ -31,5 +32,5 @@ class DetailViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 }
