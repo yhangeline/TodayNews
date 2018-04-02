@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class CenterMenuView: UIView {
     
     override init(frame: CGRect) {
@@ -69,3 +70,4 @@ class CenterMenuView: UIView {
     }
     
 }
+

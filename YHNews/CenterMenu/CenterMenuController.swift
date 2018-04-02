@@ -8,10 +8,24 @@
 
 import UIKit
 
-class CenterMenuController: UIPresentationController {
+class CenterMenuController : UIViewController {
+    var mainView:CenterMenuView?
+//    var transitionDelegate : CenterMenuDelegate = CenterMenuDelegate()
+
+    override func viewDidLoad() {
+//        self.transitioningDelegate = self.transitionDelegate
+//        self.modalPresentationStyle = .custom
+//        self.view.backgroundColor = UIColor.red
+        
+        mainView = CenterMenuView.init(frame: CGRect(x:0,y:0,width: screenWidth/3*2,height:screenHeight))
+        self.view.addSubview(mainView!)
+    }
+}
+
+class CenterMenuPresentationController: UIPresentationController {
     
     fileprivate var maskView: UIView!
-    var InteractionControllerKey: UIPercentDrivenInteractiveTransition? = nil
+    public var interactionController: UIPercentDrivenInteractiveTransition? = nil
     
     public override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
@@ -21,8 +35,7 @@ class CenterMenuController: UIPresentationController {
     
     @objc func dismissByTap(tap:UITapGestureRecognizer) {
         presentedViewController.dismiss(animated: true) {
-//            [weak self] in
-//            self?.animateTransition(using: self?.animationController(forDismissed: (self?.presentedViewController)!) as! UIViewControllerContextTransitioning)
+
         }
         
     }
@@ -33,30 +46,30 @@ class CenterMenuController: UIPresentationController {
         case .began:
             self.interactionController = UIPercentDrivenInteractiveTransition()
             
-            presentedViewController.navigationController?.popViewController(animated: true)
+            presentingViewController.dismiss(animated: true, completion: nil)
             
         case .changed:
             let width:CGFloat = (self.containerView?.bounds.size.width)!*(2.0/3.0)
             let translation = pan.translation(in: self.containerView)
             
             let completionProgress = translation.x/(-width)
-            self.interactionController.update(completionProgress)
+            self.interactionController?.update(completionProgress)
             print(translation,completionProgress)
             
         case .ended:
             let width:CGFloat = (self.containerView?.bounds.size.width)!*(2.0/3.0)/2
-            let completionProgress = pan.velocity(in: self.containerView).x+width
-            if (completionProgress > 0) {
-                self.interactionController.finish()
+            let completionProgress = pan.translation(in: self.containerView).x+width
+            if (completionProgress < 0) {
+                self.interactionController?.finish()
             } else {
-                self.interactionController.cancel()
+                self.interactionController?.cancel()
             }
-//            self.interactionController = nil
+            self.interactionController = nil
             
         default:
             
-            self.interactionController.cancel()
-//            self.interactionController = nil
+            self.interactionController?.cancel()
+            self.interactionController = nil
             
         }
     }
@@ -76,8 +89,8 @@ class CenterMenuController: UIPresentationController {
         }
         
         coordinator.animate(alongsideTransition: { _ in
-            let width:CGFloat = (self.containerView?.bounds.size.width)!*(2.0/3.0)
-            self.presentingViewController.view?.transform = CGAffineTransform(translationX: width-1, y: 0)
+//            let width:CGFloat = (self.containerView?.bounds.size.width)!*(2.0/3.0)
+//            self.presentingViewController.view?.transform = CGAffineTransform(translationX: width-1, y: 0)
             self.maskView.alpha = 1.0
         })
     }
@@ -89,7 +102,7 @@ class CenterMenuController: UIPresentationController {
         }
         
         coordinator.animate(alongsideTransition: { _ in
-            self.presentingViewController.view?.transform = CGAffineTransform.identity
+//            self.presentingViewController.view?.transform = CGAffineTransform.identity
             self.maskView.alpha = 0.0
         })
     }
@@ -111,7 +124,7 @@ class CenterMenuController: UIPresentationController {
     
 }
 
-private extension CenterMenuController {
+private extension CenterMenuPresentationController {
     func setupMaskView() {
         maskView = UIView()
         maskView.backgroundColor = UIColor(white:0, alpha:0.5)
@@ -129,14 +142,16 @@ private extension CenterMenuController {
 
 class CenterMenuDelegate: NSObject{
     
+    var presentationVC:CenterMenuPresentationController? = nil
 
     
 }
 extension CenterMenuDelegate : UIViewControllerTransitioningDelegate{
     
-    public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         let presentationController =
-            CenterMenuController.init(presentedViewController: presented, presenting: presenting)
+            CenterMenuPresentationController.init(presentedViewController: presented, presenting: presenting)
+        presentationVC = presentationController
         return presentationController
     }
     
@@ -149,28 +164,16 @@ extension CenterMenuDelegate : UIViewControllerTransitioningDelegate{
     
     func animationController(forDismissed dismissed: UIViewController)
         -> UIViewControllerAnimatedTransitioning? {
-            return TransitonAnimate(isPresentation:false)
-    }
-
-}
-extension CenterMenuController: UINavigationControllerDelegate {
-    var interactionController:UIPercentDrivenInteractiveTransition{
-        get {
-            return InteractionControllerKey!
-        }
-        set(newValue) {
-            InteractionControllerKey = newValue
-            
-        }
-    }
-    func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return self.interactionController
-    }
-    
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-
         return TransitonAnimate(isPresentation:false)
-        
     }
     
+    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return presentationVC?.interactionController
+    }
+
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return presentationVC?.interactionController
+    }
 }
+
+
