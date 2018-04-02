@@ -141,18 +141,8 @@ private extension CenterMenuPresentationController {
 }
 
 extension CenterMenuController: UINavigationControllerDelegate {
-    var interactionController:UIPercentDrivenInteractiveTransition{
-        get {
-            return InteractionControllerKey!
-        }
-        set(newValue) {
-            InteractionControllerKey = newValue
-            
-        }
-    }
-    func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return self.interactionController
-    }
+    
+    
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
