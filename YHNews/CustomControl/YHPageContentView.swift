@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PageContentViewDelegate {
+protocol PageContentViewDelegate: class {
     func pageContentViewDidEndScroll(index: Int)
 }
 
@@ -20,7 +20,7 @@ class YHPageContentView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     
     private var collectionView: UICollectionView!
     
-    var delegate: PageContentViewDelegate?
+    weak var delegate: PageContentViewDelegate?
     
     
     init(frame: CGRect, childControllers: [UIViewController]) {

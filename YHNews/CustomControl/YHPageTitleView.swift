@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol YHPageTitleViewDelegate {
+protocol YHPageTitleViewDelegate: class {
     func pageTitleViewDidSeleced(atIndex index: Int)
 }
 
@@ -34,7 +34,7 @@ private class PageTitleCell: UICollectionViewCell {
         title = UILabel(frame: self.bounds)
         title.font = UIFont.systemFont(ofSize: 14)
         title.textAlignment = NSTextAlignment.center
-        self .addSubview(title)
+        self.addSubview(title)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,7 +47,7 @@ class YHPageTitleView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
     
     private var collectionView: UICollectionView!
     private let dataSource: [String]
-    var delegate: YHPageTitleViewDelegate?
+    weak var delegate: YHPageTitleViewDelegate?
     
     var firstLoadCell = true
     

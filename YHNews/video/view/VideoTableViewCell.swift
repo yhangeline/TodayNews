@@ -16,19 +16,6 @@ class VideoTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarImg: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
     
-    var str: String
-    let aaa: String
-    
-    init() {
-        aaa = "123"
-        str = "123"
-        super.init(style: UITableViewCellStyle.default, reuseIdentifier: "s")
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         

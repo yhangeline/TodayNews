@@ -127,11 +127,35 @@ private extension CenterMenuController {
 
 }
 
+extension CenterMenuController: UINavigationControllerDelegate {
+    var interactionController:UIPercentDrivenInteractiveTransition{
+        get {
+            return InteractionControllerKey!
+        }
+        set(newValue) {
+            InteractionControllerKey = newValue
+            
+        }
+    }
+    func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return self.interactionController
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return TransitonAnimate(isPresentation:false)
+        
+    }
+    
+}
+
 class CenterMenuDelegate: NSObject{
     
 
     
 }
+
+
 extension CenterMenuDelegate : UIViewControllerTransitioningDelegate{
     
     public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
@@ -152,25 +176,4 @@ extension CenterMenuDelegate : UIViewControllerTransitioningDelegate{
             return TransitonAnimate(isPresentation:false)
     }
 
-}
-extension CenterMenuController: UINavigationControllerDelegate {
-    var interactionController:UIPercentDrivenInteractiveTransition{
-        get {
-            return InteractionControllerKey!
-        }
-        set(newValue) {
-            InteractionControllerKey = newValue
-            
-        }
-    }
-    func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return self.interactionController
-    }
-    
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-
-        return TransitonAnimate(isPresentation:false)
-        
-    }
-    
 }
