@@ -13,7 +13,7 @@ class HomeViewController: UIViewController, YHPageTitleViewDelegate, PageContent
     let navigationBar = HomeNaviView.loadViewFromNib()
     var pageTitleView: YHPageTitleView?
     var pageContentView: YHPageContentView?
-    
+    var transitionDelegate : CenterMenuDelegate = CenterMenuDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,13 +39,14 @@ class HomeViewController: UIViewController, YHPageTitleViewDelegate, PageContent
         
         navigationBar.block = {
             [weak self] in
-            let vc = UIViewController()
-            let delegate :CenterMenuDelegate = CenterMenuDelegate()
-            vc.transitioningDelegate = delegate
+
+            let vc = CenterMenuController()
+            vc.transitioningDelegate = self?.transitionDelegate
             vc.modalPresentationStyle = .custom
-            vc.view.backgroundColor = UIColor.red
-            vc.view = CenterMenuView.init(frame: CGRect(x:0,y:0,width: screenWidth/3*2,height:screenHeight))
-            self?.present(vc, animated: true, completion: nil)
+            self?.present(vc, animated: true, completion: {
+                
+            })
+            
         }
     }
 
