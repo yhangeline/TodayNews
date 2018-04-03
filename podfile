@@ -1,0 +1,4 @@
+use_frameworks!
+target 'YHNews' do
+pod 'HandyJSON'
+end

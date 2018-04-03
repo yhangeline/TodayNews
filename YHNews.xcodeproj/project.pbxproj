@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4F525EDEDA508366749654 /* Pods_YHNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E666CFC63DB93C369CC3F432 /* Pods_YHNews.framework */; };
 		6B8FF04C2068ED5200BB9F01 /* CenterMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8FF04B2068ED5200BB9F01 /* CenterMenuView.swift */; };
 		6B8FF04E2068F18000BB9F01 /* CenterMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8FF04D2068F18000BB9F01 /* CenterMenuController.swift */; };
 		6BDC26DF206DDCFE0039A8DD /* TransitonAnimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC26DE206DDCFD0039A8DD /* TransitonAnimate.swift */; };
@@ -38,9 +39,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30A5A832F6B26C0CB615C649 /* Pods-YHNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YHNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YHNews/Pods-YHNews.debug.xcconfig"; sourceTree = "<group>"; };
 		6B8FF04B2068ED5200BB9F01 /* CenterMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterMenuView.swift; sourceTree = "<group>"; };
 		6B8FF04D2068F18000BB9F01 /* CenterMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterMenuController.swift; sourceTree = "<group>"; };
 		6BDC26DE206DDCFD0039A8DD /* TransitonAnimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitonAnimate.swift; sourceTree = "<group>"; };
+		A0B4E7E7218185CC64B582B1 /* Pods-YHNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YHNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-YHNews/Pods-YHNews.release.xcconfig"; sourceTree = "<group>"; };
+		E666CFC63DB93C369CC3F432 /* Pods_YHNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YHNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F801E1582064F28900770D46 /* YHNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YHNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F801E15B2064F28900770D46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F801E1622064F28900770D46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4F525EDEDA508366749654 /* Pods_YHNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,11 +96,30 @@
 			path = CenterMenu;
 			sourceTree = "<group>";
 		};
+		C32987E56BB27B828A88C8D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				30A5A832F6B26C0CB615C649 /* Pods-YHNews.debug.xcconfig */,
+				A0B4E7E7218185CC64B582B1 /* Pods-YHNews.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F1FE3880D35952DCD5B0202D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E666CFC63DB93C369CC3F432 /* Pods_YHNews.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F801E14F2064F28800770D46 = {
 			isa = PBXGroup;
 			children = (
 				F801E15A2064F28900770D46 /* YHNews */,
 				F801E1592064F28900770D46 /* Products */,
+				C32987E56BB27B828A88C8D0 /* Pods */,
+				F1FE3880D35952DCD5B0202D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,9 +260,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F801E16A2064F28900770D46 /* Build configuration list for PBXNativeTarget "YHNews" */;
 			buildPhases = (
+				20C5EC36CC384A6D80577C15 /* [CP] Check Pods Manifest.lock */,
 				F801E1542064F28900770D46 /* Sources */,
 				F801E1552064F28900770D46 /* Frameworks */,
 				F801E1562064F28900770D46 /* Resources */,
+				9F4BEEDDFA020614D8185661 /* [CP] Embed Pods Frameworks */,
+				AC457BFF39686347F0B811A5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,6 +325,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		20C5EC36CC384A6D80577C15 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YHNews-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F4BEEDDFA020614D8185661 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YHNews/Pods-YHNews-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YHNews/Pods-YHNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC457BFF39686347F0B811A5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YHNews/Pods-YHNews-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F801E1542064F28900770D46 /* Sources */ = {
@@ -452,6 +533,7 @@
 		};
 		F801E16B2064F28900770D46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30A5A832F6B26C0CB615C649 /* Pods-YHNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -467,6 +549,7 @@
 		};
 		F801E16C2064F28900770D46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0B4E7E7218185CC64B582B1 /* Pods-YHNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
