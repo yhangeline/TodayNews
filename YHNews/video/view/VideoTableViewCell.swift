@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VideoTableViewCell: UITableViewCell {
+class VideoTableViewCell: UITableViewCell, ReusableView, NibLoadable {
     
     @IBOutlet weak var videoImg: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!

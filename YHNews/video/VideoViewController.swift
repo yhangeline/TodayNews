@@ -30,7 +30,8 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight-NAVIGATION_BAR_HEIGHT-TAB_BAR_HEIGHT-STATUS_BAR_HEIGHT), style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "VideoTableViewCell", bundle: .main), forCellReuseIdentifier: "ide")
+//        tableView.register(UINib(nibName: "VideoTableViewCell", bundle: .main), forCellReuseIdentifier: "ide")
+        tableView.register(VideoTableViewCell.self)
         view.addSubview(tableView)
     }
 }
@@ -42,7 +43,7 @@ extension VideoViewController {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ide") as! VideoTableViewCell
+        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as VideoTableViewCell
         let model = dataSource[indexPath.row]
         cell.nameLabel.text = model.title
         cell.userLabel.text = model.name
