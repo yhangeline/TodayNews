@@ -30,7 +30,6 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight-NAVIGATION_BAR_HEIGHT-TAB_BAR_HEIGHT-STATUS_BAR_HEIGHT), style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
-//        tableView.register(UINib(nibName: "VideoTableViewCell", bundle: .main), forCellReuseIdentifier: "ide")
         tableView.register(VideoTableViewCell.self)
         view.addSubview(tableView)
     }
@@ -59,12 +58,12 @@ extension VideoViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath)
-        if cell?.subviews.contains(playerView) ?? false {
+        let cell = tableView.cellForRow(at: indexPath)!
+        guard cell.subviews.contains(playerView) == false else {
             return
         }
         currentVideoCell = (cell as! VideoTableViewCell)
-        cell?.addSubview(playerView)
+        cell.addSubview(playerView)
         playerView.playVideo(urlString: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
     }
     

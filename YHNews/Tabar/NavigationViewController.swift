@@ -12,7 +12,6 @@ class NavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // 设置状态栏属性
         navigationBar.barStyle = .black
         navigationBar.setBackgroundImage(UIImage(named: "navigation_background"), for: .default)

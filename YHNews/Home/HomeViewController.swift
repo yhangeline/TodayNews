@@ -36,7 +36,7 @@ class HomeViewController: UIViewController, YHPageTitleViewDelegate, PageContent
             self.view.addSubview(self.pageContentView!)
             
         }
-        
+    
         navigationBar.block = {
             [weak self] in
 
