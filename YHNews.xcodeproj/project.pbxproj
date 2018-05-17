@@ -36,6 +36,7 @@
 		F809DCC6206A468500C8595E /* YHVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCC5206A468500C8595E /* YHVideoPlayer.swift */; };
 		F809DCC8206A469700C8595E /* YHVideoPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = F809DCC7206A469700C8595E /* YHVideoPlayer.xib */; };
 		F809DCCB206C917100C8595E /* RedpackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809DCCA206C917100C8595E /* RedpackageViewController.swift */; };
+		F865A1EB20AD2D6600CD06EC /* MoyaNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F865A1EA20AD2D6600CD06EC /* MoyaNet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		F809DCC5206A468500C8595E /* YHVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YHVideoPlayer.swift; sourceTree = "<group>"; };
 		F809DCC7206A469700C8595E /* YHVideoPlayer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YHVideoPlayer.xib; sourceTree = "<group>"; };
 		F809DCCA206C917100C8595E /* RedpackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedpackageViewController.swift; sourceTree = "<group>"; };
+		F865A1EA20AD2D6600CD06EC /* MoyaNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaNet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			children = (
 				F801E1772064F78600770D46 /* NetWorkManager.swift */,
 				F801E1792064FF3200770D46 /* NetWorkTool.swift */,
+				F865A1EA20AD2D6600CD06EC /* MoyaNet.swift */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -265,7 +268,6 @@
 				F801E1552064F28900770D46 /* Frameworks */,
 				F801E1562064F28900770D46 /* Resources */,
 				9F4BEEDDFA020614D8185661 /* [CP] Embed Pods Frameworks */,
-				AC457BFF39686347F0B811A5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -352,30 +354,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-YHNews/Pods-YHNews-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YHNews/Pods-YHNews-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AC457BFF39686347F0B811A5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YHNews/Pods-YHNews-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -390,6 +383,7 @@
 				F809DCBF206A180000C8595E /* VideoViewController.swift in Sources */,
 				6B8FF04C2068ED5200BB9F01 /* CenterMenuView.swift in Sources */,
 				F809DCCB206C917100C8595E /* RedpackageViewController.swift in Sources */,
+				F865A1EB20AD2D6600CD06EC /* MoyaNet.swift in Sources */,
 				F801E1832068CAAE00770D46 /* HomeNaviView.swift in Sources */,
 				F801E17A2064FF3200770D46 /* NetWorkTool.swift in Sources */,
 				F809DCB42068F64500C8595E /* YHPageContentView.swift in Sources */,

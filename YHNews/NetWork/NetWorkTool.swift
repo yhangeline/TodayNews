@@ -97,7 +97,7 @@ extension NetworkToolProtocol {
                 } catch  {
                     print("解析失败:\(error)")
                 }
-                print(try! JSONSerialization.jsonObject(with: jsonString.data(using: String.Encoding.utf8)!, options: JSONSerialization.ReadingOptions.mutableContainers))
+//                print(try! JSONSerialization.jsonObject(with: jsonString.data(using: String.Encoding.utf8)!, options: JSONSerialization.ReadingOptions.mutableContainers))
             }
 
             completionHandler(dataArray)

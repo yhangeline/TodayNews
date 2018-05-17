@@ -24,6 +24,12 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
             self.dataSource = datas
             self.tableView?.reloadData()
         }
+        
+//        YHNetwork.request(target: .videoList, success: { (data) in
+//            print(data)
+//        }) { (error) in
+//            print(error)
+//        }
     }
     
     func layoutUI() {

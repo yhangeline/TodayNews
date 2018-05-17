@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController, YHPageTitleViewDelegate, PageContentViewDelegate {
     
-    let navigationBar = HomeNaviView.loadViewFromNib()
+    private let navigationBar = HomeNaviView.loadViewFromNib()
     var pageTitleView: YHPageTitleView?
     var pageContentView: YHPageContentView?
     var transitionDelegate : CenterMenuDelegate = CenterMenuDelegate()
@@ -24,6 +24,8 @@ class HomeViewController: UIViewController, YHPageTitleViewDelegate, PageContent
             let titles: [String] = arr.flatMap({ (model) -> String? in
                 model.name
             })
+            
+            
             self.pageTitleView = YHPageTitleView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 40), titleNames: titles)
             self.pageTitleView?.delegate = self
             self.view.addSubview(self.pageTitleView!)

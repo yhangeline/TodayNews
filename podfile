@@ -1,4 +1,5 @@
 use_frameworks!
 target 'YHNews' do
 pod 'HandyJSON', '4.0.0-beta.1'
+pod 'Moya'
 end
